@@ -101,6 +101,9 @@ async function callString(url: string, opts: FetchOptions): Promise<FetchResult>
   });
   const text = await res.text();
   const fetchedAt = new Date().toISOString();
+  if (process.env.DEBUG) {
+    console.error(`[string] ${res.status} ${res.headers.get("content-type")} ${url}\n[string] ${JSON.stringify(text.slice(0, 300))}`);
+  }
 
   if (!res.ok) {
     // String itself refused (bad key, no credit, destination not enabled, upstream failure).

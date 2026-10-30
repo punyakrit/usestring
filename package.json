@@ -10,7 +10,11 @@
   },
   "scripts": {
     "start": "tsx --env-file=.env src/index.ts",
-    "fetch": "tsx --env-file=.env src/string.ts"
+    "fetch": "tsx --env-file=.env src/string.ts",
+    "source:todaytix": "tsx --env-file=.env src/sources/todaytix.ts",
+    "source:broadwaydirect": "tsx --env-file=.env src/sources/broadwaydirect.ts",
+    "typecheck": "tsc --noEmit",
+    "test": "tsx --test test/*.test.ts"
   },
   "devDependencies": {
     "@types/node": "^26.6.6",
